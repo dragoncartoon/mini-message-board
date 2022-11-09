@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  a(href="/") Go back 
+  br
+  h1= title
+
+  form(method="POST" action="/new")
+    label(for='name') Author name:
+      input(
+        type='text',
+        id='name', 
+        name='name', 
+        placeholder='Username')
+
+    label(for='message') Message:
+      textarea(
+        name='message', 
+        id='message',
+        cols='30', 
+        rows='10',
+        placeholder='Put your message here',
+        required) 
+    button(type='submit' value='Submit')= 'Post'
+
+

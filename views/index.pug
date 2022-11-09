@@ -1,5 +1,13 @@
 extends layout
 
 block content
+  a(href="/new") Post a message 
+
   h1= title
-  p Welcome to #{title}
+  each item in messages
+    div(class='flex')
+      div(class='time')= format(item.added, { addSuffix: true })
+      div(class='container')
+        div(class='name')= item.user
+        p= item.text
+      
